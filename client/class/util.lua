@@ -6,64 +6,143 @@ end
 
 function playerBuyTicketMenu()
     local elements = {}
+    local index = 0
+    local ticketMenu = MenuAPI:CreateMenu("ticket_menu")
 
-    for k,v in pairs(Config.ticketPrice) do
-        table.insert(elements, { label = _U("ticket_label", k) .. " <span style='color: green;'>$" .. v.price .. "</span>", value = k })
+    ticketMenu.SetMenuTitle(_U("ticket_menu"))
+
+    ticketMenu.SetProperties({
+        float = "right",
+        position = "middle",
+    })
+
+    for k, v in pairs(Config.ticketPrice) do
+        index = index + 1
+        ticketMenu.AddItem(index, _U("ticket_label", k) .. " <span style='color: green;'>$" .. v.price .. "</span>", function()
+            TriggerServerEvent("rcore_arcade:buyTicket", k)
+            ticketMenu.Destroy()
+        end)
     end
 
-    rcore:createMenu(_U("ticket_menu"), GetCurrentResourceName(), elements, {
-        submit = function(data, menu)
-            menu.close()
-            local ticket = data.current.value
-            TriggerServerEvent("rcore_arcade:buyTicket", ticket)
-        end
-    })
+    ticketMenu.On("selectitem", function(index)
+        print(index, "joujou")
+    end)
+
+    ticketMenu.On("close", function()
+        print("mg funguju")
+    end)
+
+    ticketMenu.Open()
 end
 
 function returnTicketMenu()
-    local elements = {
-        { label = _U("yes"), value = "yes" },
-        { label = _U("no"),  value = "no" },
-    }
+    local returnMenu = MenuAPI:CreateMenu("returnMenu")
 
-    rcore:createMenu(_U("give_back_ticket"), GetCurrentResourceName(), elements, {
-        submit = function(data, menu)
-            menu.close()
-            local ticket = data.current.value
-            if ticket == "yes" then
-                minutes = 0
-                seconds = 0
-                gotTicket = false
-            end
-        end
+    returnMenu.SetMenuTitle(_U("give_back_ticket"))
+
+    returnMenu.SetProperties({
+        float = "right",
+        position = "middle",
     })
+
+    returnMenu.AddItem(1, _U("yes"), function()
+        minutes = 0
+        seconds = 0
+        gotTicket = false
+        returnMenu.Close()
+    end)
+
+    returnMenu.AddItem(2, _U("no"), function()
+        returnMenu.Close()
+    end)
+
+    returnMenu.Open()
+end
+
+function showHelpNotification(text)
+    SetNotificationTextEntry('STRING')
+    AddTextComponentString(text)
+    DrawNotification(0, 1)
+end
+
+function createBlip(name, blip, coords, options)
+    local x, y, z = table.unpack(coords)
+    local ourBlip = AddBlipForCoord(x, y, z)
+    SetBlipSprite(ourBlip, blip)
+    if options.type then SetBlipDisplay(ourBlip, options.type) end
+    if options.scale then SetBlipScale(ourBlip, options.scale) end
+    if options.color then SetBlipColour(ourBlip, options.color) end
+    if options.shortRange then SetBlipAsShortRange(ourBlip, options.shortRange) end
+    BeginTextCommandSetBlipName("STRING")
+    AddTextComponentString(name)
+    EndTextCommandSetBlipName(ourBlip)
+    return ourBlip
+end
+
+function createLocalPed(pedType, model, position, heading, cb)
+    requestModel(model, function()
+        local ped = CreatePed(pedType, model, position.x, position.y, position.z, heading, PED_NON_NETWORKED, false)
+        SetModelAsNoLongerNeeded(model)
+        cb(ped)
+    end)
+end
+
+function requestModel(modelName, cb)
+    if type(modelName) ~= 'number' then
+        modelName = tonumber(modelName)
+    end
+
+    local breaker = 0
+
+    RequestModel(modelName)
+
+    while not HasModelLoaded(modelName) do
+        Citizen.Wait(1)
+        breaker = breaker + 1
+        if breaker >= 100 then
+            break
+        end
+    end
+
+    if breaker >= 100 then
+        cb(false)
+    else
+        cb(true)
+    end
 end
 
 function openComputerMenu(listGames, computer_)
-    local elements = {}
     local computer = computer_
-    for key, value in pairs(listGames) do
-        table.insert(elements, { label = value.name, value = value.link })
-    end
-
+    local index = 0
     if not gotTicket and computer.isInGamingHouse then
-        rcore:showHelpNotification(_U("need_to_buy_ticket"))
+        showHelpNotification(_U("need_to_buy_ticket"))
         return
     end
+    local gameMenu = MenuAPI:CreateMenu("gamelist")
 
-    rcore:createMenu(_U("computer_menu"), GetCurrentResourceName(), elements, {
-        submit = function(data, menu)
-            menu.close()
-            local url = data.current.value
+    gameMenu.SetMenuTitle(_U("computer_menu"))
+
+    gameMenu.SetProperties({
+        float = "right",
+        position = "middle",
+    })
+
+    for key, value in pairs(listGames) do
+        index = index + 1
+        print(index, value.name)
+        gameMenu.AddItem(index, value.name, function()
             SendNUIMessage({
                 type = "on",
-                game = url,
+                game = value.link,
                 gpu = computer.computerGPU,
                 cpu = computer.computerCPU
             })
             SetNuiFocus(true, true)
-        end
-    })
+            gameMenu.Close()
+        end)
+    end
+
+    gameMenu.Open()
 end
 
 function hasPlayerRunOutOfTime()

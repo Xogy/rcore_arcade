@@ -1,8 +1,8 @@
 -------------------
 -- Exports
 -------------------
-rcore = exports.rcore
-ESX = rcore:getEsxInstance()
+scode = exports.scode
+MenuAPI = exports.MenuAPI
 -------------------
 -- variables for arcade and time left
 -------------------
@@ -23,7 +23,7 @@ Citizen.CreateThread(function()
         Citizen.Wait(1000)
         if gotTicket then
             if hasPlayerRunOutOfTime() then
-                rcore:showHelpNotification(_U("ticket_expired"))
+                showHelpNotification(_U("ticket_expired"))
                 gotTicket = false
 
                 SendNUIMessage({
@@ -42,30 +42,39 @@ end)
 --create npc, blip, marker
 Citizen.CreateThread(function()
     for k, v in pairs(Config.Arcade) do
-        rcore:createDistanceMarker(v.marker.markerType, v.marker.markerPosition, 10,
-            {
-                onEnter = function()
-                    rcore:showHelpNotification(_U("open_ticket_menu"))
-                end,
-                onLeave = function()
-                    ESX.UI.Menu.CloseAll()
-                end,
-                onEnterKey = function(key)
-                    if key == rcore:getKeys()[Config.keyToOpenTicketMenu] then
-                        if gotTicket == false then
-                            playerBuyTicketMenu()
-                        else
-                            returnTicketMenu()
-                        end
-                    end
-                end
-            },v.marker.options)
+        local newPos = v.marker.markerPosition - vector3(0, 0, 0.4)
+        local computerMarker = scode:createMarker()
+
+        computerMarker.setKeys({38})
+
+        computerMarker.setRenderDistance(10)
+        computerMarker.setPosition(newPos)
+
+        computerMarker.render()
+
+        computerMarker.setColor(v.marker.options.color)
+        computerMarker.setScale(v.marker.options.scale)
+        computerMarker.setType(v.marker.MarkerStyle)
+
+        computerMarker.on('enter', function()
+            showHelpNotification(_U("open_ticket_menu"))
+        end)
+        computerMarker.on('leave', function()
+            MenuAPI:CloseAll()
+        end)
+        computerMarker.on('key', function()
+            if gotTicket == false then
+                playerBuyTicketMenu()
+            else
+                returnTicketMenu()
+            end
+        end)
 
         if v.blip and v.blip.enable then
-            rcore:createBlip(v.blip.name, v.blip.blipId, v.blip.position, v.blip)
+            createBlip(v.blip.name, v.blip.blipId, v.blip.position, v.blip)
         end
 
-        rcore:createLocalPed(4, v.NPC.model, v.NPC.position, v.NPC.heading, function(ped)
+        createLocalPed(4, v.NPC.model, v.NPC.position, v.NPC.heading, function(ped)
             SetEntityAsMissionEntity(ped)
             SetBlockingOfNonTemporaryEvents(ped, true)
             FreezeEntityPosition(ped, true)
@@ -77,21 +86,28 @@ end)
 --create markers for computers
 Citizen.CreateThread(function()
     for k, v in pairs(Config.computerList) do
-        local newPos = vector3(v.position.x, v.position.y, v.position.z - 0.4)
-        rcore:createDistanceMarker(v.markerType, newPos, 10,
-            {
-                onEnter = function()
-                    rcore:showHelpNotification(_U("open_computer"))
-                end,
-                onLeave = function()
-                    ESX.UI.Menu.CloseAll()
-                end,
-                onEnterKey = function(key)
-                    local listGames = v.computerType
-                    if key == rcore:getKeys()[Config.keyToOpenComputer] then
-                        openComputerMenu(listGames, v)
-                    end
-                end
-            }, v.markerOptions)
+        local newPos = v.position - vector3(0, 0, 0.4)
+        local computerMarker = scode:createMarker()
+
+        computerMarker.setKeys({38})
+
+        computerMarker.setRenderDistance(10)
+        computerMarker.setPosition(newPos)
+
+        computerMarker.render()
+
+        computerMarker.setColor(v.markerOptions.color)
+        computerMarker.setScale(v.markerOptions.scale)
+        computerMarker.setType(v.MarkerStyle)
+
+        computerMarker.on('enter', function()
+            showHelpNotification(showHelpNotification(_U("open_computer")))
+        end)
+        computerMarker.on('leave', function()
+            MenuAPI:CloseAll()
+        end)
+        computerMarker.on('key', function()
+            openComputerMenu(v.computerType, v)
+        end)
     end
 end)

@@ -2,11 +2,12 @@ fx_version 'adamant'
 games { 'gta5' }
 
 dependencies {
-	'rcore'
+	'scode',
+	'MenuAPI',
 }
 
 client_scripts {
-	"@es_extended/locale.lua",
+	"locale.lua",
 	"locales/*.lua",
 	"config.lua",
 
@@ -17,7 +18,7 @@ client_scripts {
 }
 
 server_script {
-	"@es_extended/locale.lua",
+	"locale.lua",
 	"locales/*.lua",
 	"config.lua",
 
