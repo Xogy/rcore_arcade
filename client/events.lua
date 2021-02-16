@@ -1,6 +1,6 @@
 RegisterNetEvent("rcore_arcade:ticketResult")
 AddEventHandler("rcore_arcade:ticketResult", function(ticket)
-    showHelpNotification(_U("bought_ticket", ticket, Config.ticketPrice[ticket].time))
+    showNotification(_U("bought_ticket", ticket, Config.ticketPrice[ticket].time))
 
     -- Will set time player can be in arcade from Config
     seconds = 1
@@ -12,7 +12,7 @@ end)
 
 RegisterNetEvent("rcore_arcade:nomoney")
 AddEventHandler("rcore_arcade:nomoney", function()
-    showHelpNotification(_U("not_enough_money"))
+    showNotification(_U("not_enough_money"))
 end)
 
 RegisterNUICallback('exit', function()

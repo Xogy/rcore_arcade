@@ -23,7 +23,7 @@ Citizen.CreateThread(function()
         Citizen.Wait(1000)
         if gotTicket then
             if hasPlayerRunOutOfTime() then
-                showHelpNotification(_U("ticket_expired"))
+                showNotification(_U("ticket_expired"))
                 gotTicket = false
 
                 SendNUIMessage({
@@ -101,7 +101,7 @@ Citizen.CreateThread(function()
         computerMarker.setType(v.MarkerStyle)
 
         computerMarker.on('enter', function()
-            showHelpNotification(showHelpNotification(_U("open_computer")))
+            showHelpNotification(_U("open_computer"))
         end)
         computerMarker.on('leave', function()
             MenuAPI:CloseAll()

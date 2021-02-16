@@ -60,6 +60,12 @@ function returnTicketMenu()
 end
 
 function showHelpNotification(text)
+    BeginTextCommandDisplayHelp("THREESTRINGS")
+    AddTextComponentSubstringPlayerName(text)
+    EndTextCommandDisplayHelp(0, false, true,5000)
+end
+
+function showNotification(text)
     SetNotificationTextEntry('STRING')
     AddTextComponentString(text)
     DrawNotification(0, 1)
@@ -115,7 +121,7 @@ function openComputerMenu(listGames, computer_)
     local computer = computer_
     local index = 0
     if not gotTicket and computer.isInGamingHouse then
-        showHelpNotification(_U("need_to_buy_ticket"))
+        showNotification(_U("need_to_buy_ticket"))
         return
     end
     local gameMenu = MenuAPI:CreateMenu("gamelist")
