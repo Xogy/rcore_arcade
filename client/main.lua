@@ -54,7 +54,7 @@ Citizen.CreateThread(function()
 
         computerMarker.setColor(v.marker.options.color)
         computerMarker.setScale(v.marker.options.scale)
-        computerMarker.setType(v.marker.MarkerStyle)
+        computerMarker.setType(v.marker.markerType)
 
         computerMarker.on('enter', function()
             showHelpNotification(_U("open_ticket_menu"))
@@ -98,7 +98,9 @@ Citizen.CreateThread(function()
 
         computerMarker.setColor(v.markerOptions.color)
         computerMarker.setScale(v.markerOptions.scale)
-        computerMarker.setType(v.MarkerStyle)
+        computerMarker.setType(v.markerType)
+
+        computerMarker.setRotation(v.markerOptions.rotate)
 
         computerMarker.on('enter', function()
             showHelpNotification(_U("open_computer"))

@@ -24,7 +24,7 @@ Config.Arcade = {
             enable = true,
         },
         marker = {
-            markerPosition = vector3(-1082.12, -247.57, 36.8),
+            markerPosition = vector3(-1082.12, -247.57, 37.2),
             markerType = 23,
             options = {
                 scale = { x = 1.0, y = 1.0, z = 1.0 },
@@ -144,7 +144,6 @@ Config.computerList = {
         markerOptions = {
             scale = { x = 0.5, y = 0.5, z = 0.5 },
             color = { r = 255, g = 255, b = 255, a = 125 },
-            bobUpAndDown = false,
             rotate = true,
         },
     },
@@ -159,7 +158,6 @@ Config.computerList = {
         markerOptions = {
             scale = { x = 0.5, y = 0.5, z = 0.5 },
             color = { r = 255, g = 255, b = 255, a = 125 },
-            bobUpAndDown = false,
             rotate = true,
         },
     },
@@ -175,7 +173,6 @@ Config.computerList = {
         markerOptions = {
             scale = { x = 0.5, y = 0.5, z = 0.5 },
             color = { r = 125, g = 125, b = 255, a = 125 },
-            bobUpAndDown = false,
             rotate = true,
         },
     },
@@ -190,7 +187,6 @@ Config.computerList = {
         markerOptions = {
             scale = { x = 0.5, y = 0.5, z = 0.5 },
             color = { r = 125, g = 125, b = 255, a = 125 },
-            bobUpAndDown = false,
             rotate = true,
         },
     },
@@ -205,7 +201,6 @@ Config.computerList = {
         markerOptions = {
             scale = { x = 0.5, y = 0.5, z = 0.5 },
             color = { r = 125, g = 125, b = 255, a = 125 },
-            bobUpAndDown = false,
             rotate = true,
         },
     },
@@ -220,7 +215,6 @@ Config.computerList = {
         markerOptions = {
             scale = { x = 0.5, y = 0.5, z = 0.5 },
             color = { r = 125, g = 125, b = 255, a = 125 },
-            bobUpAndDown = false,
             rotate = true,
         },
     },
@@ -235,7 +229,6 @@ Config.computerList = {
         markerOptions = {
             scale = { x = 0.5, y = 0.5, z = 0.5 },
             color = { r = 125, g = 125, b = 255, a = 125 },
-            bobUpAndDown = false,
             rotate = true,
         },
     },
@@ -250,7 +243,6 @@ Config.computerList = {
         markerOptions = {
             scale = { x = 0.5, y = 0.5, z = 0.5 },
             color = { r = 125, g = 125, b = 255, a = 125 },
-            bobUpAndDown = false,
             rotate = true,
         },
     },
@@ -265,7 +257,6 @@ Config.computerList = {
         markerOptions = {
             scale = { x = 0.5, y = 0.5, z = 0.5 },
             color = { r = 125, g = 125, b = 255, a = 125 },
-            bobUpAndDown = false,
             rotate = true,
         },
     },
@@ -280,7 +271,6 @@ Config.computerList = {
         markerOptions = {
             scale = { x = 0.5, y = 0.5, z = 0.5 },
             color = { r = 125, g = 125, b = 255, a = 125 },
-            bobUpAndDown = false,
             rotate = true,
         },
     },
