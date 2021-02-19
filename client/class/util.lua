@@ -87,7 +87,7 @@ end
 
 function createLocalPed(pedType, model, position, heading, cb)
     requestModel(model, function()
-        local ped = CreatePed(pedType, model, position.x, position.y, position.z, heading, PED_NON_NETWORKED, false)
+        local ped = CreatePed(pedType, model, position.x, position.y, position.z, heading, false, false)
         SetModelAsNoLongerNeeded(model)
         cb(ped)
     end)
@@ -95,7 +95,7 @@ end
 
 function requestModel(modelName, cb)
     if type(modelName) ~= 'number' then
-        modelName = tonumber(modelName)
+        modelName = GetHashKey(modelName)
     end
 
     local breaker = 0
