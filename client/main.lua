@@ -1,7 +1,6 @@
 -------------------
 -- Exports
 -------------------
-scode = exports.scode
 MenuAPI = exports.MenuAPI
 -------------------
 -- variables for arcade and time left
@@ -43,7 +42,7 @@ end)
 Citizen.CreateThread(function()
     for k, v in pairs(Config.Arcade) do
         local newPos = v.marker.markerPosition - vector3(0, 0, 0.4)
-        local computerMarker = scode:createMarker()
+        local computerMarker = createMarker()
 
         computerMarker.setKeys({38})
 
@@ -87,7 +86,7 @@ end)
 Citizen.CreateThread(function()
     for k, v in pairs(Config.computerList) do
         local newPos = v.position - vector3(0, 0, 0.4)
-        local computerMarker = scode:createMarker()
+        local computerMarker = createMarker()
 
         computerMarker.setKeys({38})
 

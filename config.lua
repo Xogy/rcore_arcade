@@ -21,6 +21,7 @@ Config.Arcade = {
             scale = 1.0,
             color = 0,
             name = "Arcade house",
+            shortRange = true,
             enable = true,
         },
         marker = {
@@ -65,6 +66,13 @@ Config.CPUList = {
     [2] = "U7_8700",
     [3] = "U3_6300",
     [4] = "BENTIUM",
+}
+
+Config.MyList = {
+    {
+        name = "name",
+        link = "bleh",
+    },
 }
 
 -- game list for retro machine
