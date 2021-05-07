@@ -1,5 +1,5 @@
 
-## Check more on https://rcore.cz/
+## Check more on [https://store.rcore.cz/](https://store.rcore.cz/xogos)
 # rcore_arcade
  a simple resource for playing games with friends.<br>this resource is somewhat standalone, it can be run on any framework but dont expect the ticket feature work if you're running it on something other than ESX.
 
