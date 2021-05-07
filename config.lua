@@ -111,7 +111,7 @@ Config.GamingMachine = {
     },
     {
         name = "Uno",
-        link = "http://uno.robinko.eu/fullscreen.html",
+        link = "https://duowfriends.eu/",
     },
     {
         name = "Ants",
