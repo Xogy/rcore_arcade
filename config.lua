@@ -33,6 +33,32 @@ Config.Arcade = {
             }
         },
     },
+        -- GABZ ARCADE!!!!!
+    --[[
+    {
+        NPC = {
+            position = vector3(-1659.14, -1062.72, 12.17),
+            heading = 226.17,
+            model = "ig_claypain",
+        },
+        blip = {
+            position = vector3(-1082.12, -247.57, 36.8),
+            blipId = 521,
+            scale = 1.0,
+            color = 0,
+            name = "Gabz Arcade",
+            shortRange = true,
+            enable = false,
+        },
+        marker = {
+            markerPosition = vector3(-1649.2, -1062.78, 12.17),
+            markerType = 23,
+            options = {
+                scale = { x = 1.0, y = 1.0, z = 1.0 },
+                color = { r = 255, g = 255, b = 255, a = 125 },
+            }
+        },
+    },--]]
 }
 
 -- ticket price, and time in arcade.
@@ -283,4 +309,418 @@ Config.computerList = {
         },
     },
     -- Super machines
+
+    ------ GABZ ARCADE!!!!!! -------
+    --[[
+    -- Retro machines
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.RetroMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 31,
+        position = vector3(-1648.34, -1076.46, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 255, g = 255, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.RetroMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 31,
+        position = vector3(-1649.31, -1077.57, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 255, g = 255, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.RetroMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 31,
+        position = vector3(-1649.41, -1074.78, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 255, g = 255, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+            -- if false player dont need a ticket to play on this computer.
+            isInGamingHouse = true,
+            computerType = Config.RetroMachine,
+            computerGPU = Config.GPUList[2],
+            computerCPU = Config.CPUList[2],
+            markerType = 31,
+            position = vector3(-1650.14, -1074.18, 12.17),
+            markerOptions = {
+                scale = { x = 0.5, y = 0.5, z = 0.5 },
+                color = { r = 255, g = 255, b = 255, a = 125 },
+                rotate = true,
+            },
+        },
+        {
+            -- if false player dont need a ticket to play on this computer.
+            isInGamingHouse = true,
+            computerType = Config.RetroMachine,
+            computerGPU = Config.GPUList[2],
+            computerCPU = Config.CPUList[2],
+            markerType = 31,
+            position = vector3(-1650.83, -1073.58, 12.17),
+            markerOptions = {
+                scale = { x = 0.5, y = 0.5, z = 0.5 },
+                color = { r = 255, g = 255, b = 255, a = 125 },
+                rotate = true,
+            },
+        },
+        {
+            -- if false player dont need a ticket to play on this computer.
+            isInGamingHouse = true,
+            computerType = Config.RetroMachine,
+            computerGPU = Config.GPUList[2],
+            computerCPU = Config.CPUList[2],
+            markerType = 31,
+            position = vector3(-1650.23, -1078.69, 12.17),
+            markerOptions = {
+                scale = { x = 0.5, y = 0.5, z = 0.5 },
+                color = { r = 255, g = 255, b = 255, a = 125 },
+                rotate = true,
+            },
+        },
+        {
+            -- if false player dont need a ticket to play on this computer.
+            isInGamingHouse = true,
+            computerType = Config.RetroMachine,
+            computerGPU = Config.GPUList[2],
+            computerCPU = Config.CPUList[2],
+            markerType = 31,
+            position = vector3(-1648.34, -1076.46, 12.17),
+            markerOptions = {
+                scale = { x = 0.5, y = 0.5, z = 0.5 },
+                color = { r = 255, g = 255, b = 255, a = 125 },
+                rotate = true,
+            },
+        },
+        {
+            -- if false player dont need a ticket to play on this computer.
+            isInGamingHouse = true,
+            computerType = Config.RetroMachine,
+            computerGPU = Config.GPUList[2],
+            computerCPU = Config.CPUList[2],
+            markerType = 31,
+            position = vector3(-1652.28, -1075.75, 12.17),
+            markerOptions = {
+                scale = { x = 0.5, y = 0.5, z = 0.5 },
+                color = { r = 255, g = 255, b = 255, a = 125 },
+                rotate = true,
+            },
+        },
+        {
+                -- if false player dont need a ticket to play on this computer.
+                isInGamingHouse = true,
+                computerType = Config.RetroMachine,
+                computerGPU = Config.GPUList[2],
+                computerCPU = Config.CPUList[2],
+                markerType = 31,
+                position = vector3(-1652.94, -1075.19, 12.17),
+                markerOptions = {
+                    scale = { x = 0.5, y = 0.5, z = 0.5 },
+                    color = { r = 255, g = 255, b = 255, a = 125 },
+                    rotate = true,
+                },
+            },
+            {
+                -- if false player dont need a ticket to play on this computer.
+                isInGamingHouse = true,
+                computerType = Config.RetroMachine,
+                computerGPU = Config.GPUList[2],
+                computerCPU = Config.CPUList[2],
+                markerType = 31,
+                position = vector3(-1653.65, -1074.64, 12.17),
+                markerOptions = {
+                    scale = { x = 0.5, y = 0.5, z = 0.5 },
+                    color = { r = 255, g = 255, b = 255, a = 125 },
+                    rotate = true,
+                },
+            },
+            {
+                -- if false player dont need a ticket to play on this computer.
+                isInGamingHouse = true,
+                computerType = Config.RetroMachine,
+                computerGPU = Config.GPUList[2],
+                computerCPU = Config.CPUList[2],
+                markerType = 31,
+                position = vector3(-1654.22, -1074.14, 12.17),
+                markerOptions = {
+                    scale = { x = 0.5, y = 0.5, z = 0.5 },
+                    color = { r = 255, g = 255, b = 255, a = 125 },
+                    rotate = true,
+                },
+            },
+    -- Gaming computers
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1649.89, -1065.79, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1650.31, -1066.32, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1650.84, -1066.97, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1651.38, -1067.58, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1651.9, -1068.22, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1652.47, -1068.92, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1655.21, -1068.46, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1654.7, -1067.76, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1657.34, -1068.65, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1657.59, -1066.58, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    -- Gaming computers
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1660.27, -1067.52, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1660.25, -1068.43, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1660.18, -1069.31, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1659.81, -1070.1, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1655.21, -1068.46, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1654.7, -1067.76, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1657.34, -1068.65, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    {
+        -- if false player dont need a ticket to play on this computer.
+        isInGamingHouse = true,
+        computerType = Config.GamingMachine,
+        computerGPU = Config.GPUList[2],
+        computerCPU = Config.CPUList[2],
+        markerType = 42,
+        position = vector3(-1657.59, -1066.58, 12.17),
+        markerOptions = {
+            scale = { x = 0.5, y = 0.5, z = 0.5 },
+            color = { r = 125, g = 125, b = 255, a = 125 },
+            rotate = true,
+        },
+    },
+    -- Super machines
+    --]]
 }
