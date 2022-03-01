@@ -1,0 +1,60 @@
+<html>
+    <body>
+        <div class="ejs-container">
+            <div id="game"></div>
+        </div>
+        <script>
+            var query_string = window.location.search;
+            
+            function getQueryParams(qs) {
+                qs = qs.split('+').join(' ');
+            
+                var params = {},
+                    tokens,
+                    re = /[?&]?([^=]+)=([^&]*)/g;
+            
+                while (tokens = re.exec(qs)) {
+                    params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+                }
+            
+                return params;
+            }
+            
+            var result = getQueryParams(query_string);
+            let id = result.id || undefined
+            EJS_player = "#game";
+            EJS_core = result.params;
+            EJS_gameName = result.name;
+            EJS_startOnLoaded = true;
+            EJS_pathtodata = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/";
+            EJS_gameUrl = result.url;
+            EJS_Bios = result.bios || '';
+            EJS_gameID = result.id && parseInt(result.id) || undefined
+        </script>
+        <script src="https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js"></script>
+        <style>
+        .ejs-container
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+        }
+        
+        body
+        {
+            background: black;
+        }
+        
+        canvas
+        {
+            width: 100%;
+            height: 100%;
+        }
+        </style>
+    </body>
+</html>
