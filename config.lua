@@ -127,6 +127,35 @@ Config.RetroMachine = {
         name = "Wolfenstein 3D",
         link = string.format("nui://rcore_arcade/html/msdos.html?url=%s&params=%s", "https://www.retrogames.cz/dos/zip/Wolfenstein3D.zip", "./WOLF3D.EXE"),
     },
+    -- emulatorjs powers this second page, it takes in a rom url, a "core" type (eg nes, snes, etc) a game name, and an id for network play (yep! some cores support network play!)
+    -- for more info see : 
+    -- https://github.com/ethanaobrien/emulatorjs/tree/main/docs
+    {
+        name = "Circus Charlie",
+        link = string.format("nui://rcore_arcade/html/ejs.html?url=%s&params=%s&name=%s&id=%s", "https://www.retrogames.cz/NES/Circus_Charlie.nes", "nes", "Circus_Charlie-nes", "4201"),
+    },
+    {
+        name = "Sonic The Hedgehog",
+        link = string.format("nui://rcore_arcade/html/ejs.html?url=%s&params=%s&name=%s&id=%s", "https://www.retrogames.cz/Genesis/SonictheHedgehog.zip", "segaMD", "SonictheHedgehog-segaMD", "4202"),
+    },
+    -- some cores require a bios, you may pass it in like this
+    {
+        name = "Pokemon Ruby",
+        link = string.format("nui://rcore_arcade/html/ejs.html?url=%s&params=%s&name=%s&id=%s&bios=%s", "https://static.emulatorgames.net/roms/gameboy-advance/Pokemon%20-%20Ruby%20Version%20(U)%20(V1.1).zip", "gba", "PokemonRuby-gba", "4203", "https://phoenixnap.dl.sourceforge.net/project/gameboid/gba_bios907607290.bin"),
+    },
+    -- you may need to encode characters such as "&" in urls, or the query parser might get confused.
+    {
+        name = "Kirby & The Amazing Mirror",
+        link = string.format("nui://rcore_arcade/html/ejs.html?url=%s&params=%s&name=%s&id=%s&bios=%s", "https://static.emulatorgames.net/roms/gameboy-advance/Kirby%20%26%20The%20Amazing%20Mirror%20(U).zip", "gba", "KirbyTheAmazingMirror-gba", "4204", "https://phoenixnap.dl.sourceforge.net/project/gameboid/gba_bios907607290.bin"),
+    },
+    {
+        name = "Contra III",
+        link = string.format("nui://rcore_arcade/html/ejs.html?url=%s&params=%s&name=%s&id=%s", "https://static.emulatorgames.net/roms/super-nintendo/Contra%20III%20-%20The%20Alien%20Wars%20(U)%20[!].zip", "snes", "Contraiii-snes", "4205"),
+    },
+    {
+        name = "Metal Slug X (BIG!)", -- BIG GAME! will take a while to download/boot up
+        link = string.format("nui://rcore_arcade/html/ejs.html?url=%s&params=%s&name=%s&id=%s&bios=%s", "https://static.emulatorgames.net/roms/playstation/Metal%20Slug%20X%20(U)%20[SLUS-01212].7z", "psx", "MSLUGX-psx", "4206", "https://dl.hexrom.com/rom/psx-bios-SCPH1001-hexrom_com.zip"),
+    },
 }
 
 -- game list for gaming machine
