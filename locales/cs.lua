@@ -13,6 +13,7 @@ Locales['cs'] = {
 	["bronz"]  = "bronz",
 	["silver"] = "silver",
 	["gold"]   = "gold",
+	["Platinum"]   = "Platinum",
 
 	["ticket_label"] = "Listek %s",
 

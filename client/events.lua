@@ -20,5 +20,8 @@ RegisterNUICallback('exit', function()
         type = "off",
         game = "",
     })
+    SetPlayerVisible(true)
     SetNuiFocus(false, false)
+    RevertMinigameCamera()
+    ClearPedTasks(PlayerPedId())
 end)

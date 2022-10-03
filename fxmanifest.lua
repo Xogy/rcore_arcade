@@ -1,11 +1,24 @@
 fx_version 'adamant'
 games { 'gta5' }
 
-dependencies {
-	'MenuAPI',
+client_scripts {
+	"locale.lua",
+	"locales/*.lua",
+	"config.lua",
+
+	"client/main.lua",
+	"client/InvisibleFunction.lua",
+	"client/class/*.lua",
+	"client/events.lua",
+	"client/threads.lua",
+
+	"MenuAPI/exports/*.lua",
+	"MenuAPI/system/*.lua",
+	"MenuAPI/module/*.lua",
+	"MenuAPI/*.lua",
 }
 
-client_scripts {
+escrow_ignore {
 	"locale.lua",
 	"locales/*.lua",
 	"config.lua",
@@ -14,6 +27,20 @@ client_scripts {
 	"client/class/*.lua",
 	"client/events.lua",
 	"client/threads.lua",
+	"client/InvisibleFunction.lua",
+
+	"MenuAPI/exports/*.lua",
+	"MenuAPI/system/*.lua",
+	"MenuAPI/module/*.lua",
+	"MenuAPI/*.lua",
+	
+	"locale.lua",
+	"locales/*.lua",
+	"config.lua",
+
+	"server/server.lua",
+
+	"object.lua",	
 }
 
 server_script {
@@ -22,6 +49,10 @@ server_script {
 	"config.lua",
 
 	"server/server.lua",
+}
+
+shared_scripts {
+	"object.lua",
 }
 
 files {
@@ -33,7 +64,13 @@ files {
 	
 	"html/*.html",
 	
-	"html/scripts/listener.js",
+	"html/scripts/*.js",
+
+	"html/MenuAPI/*.js",
+	"html/MenuAPI/*.html",
+	"html/MenuAPI/*.css",
 }
 
 ui_page "html/index.html"
+
+lua54 "yes"

@@ -1,0 +1,194 @@
+@import url('http://fonts.cdnfonts.com/css/signpainter');
+@import url('https://db.onlinewebfonts.com/c/d42a1bf156fad170b6a41140da92c69c?family=Chalet');
+@import url('http://fonts.cdnfonts.com/css/chalet');
+
+.container {
+    min-width: 23.7vw;
+    max-width: 371px;
+
+    width: auto;
+    height: auto;
+
+    background: rgb(0 0 0 / 50%);
+    max-width: 23.7vw !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.container.top{
+	position: absolute;
+    top: 1.5vw;
+}
+
+.container.bottom{
+	position: absolute;
+    bottom: 1.5vw;
+}
+
+.container.bottom.right{
+    position: absolute;
+    bottom: 1.5vw;
+    right: 1.8vw;
+}
+
+.container.bottom.left{
+    position: absolute;
+    bottom: 1.5vw;
+    left: 1.8vw;
+}
+
+.container.top.right{
+    position: absolute;
+    top: 1.5vw;
+    right: 1.8vw;
+}
+
+.container.top.left{
+    position: absolute;
+    top: 1.5vw;
+    left: 1.8vw;
+}
+
+.container.middle.right{
+    position: absolute;
+    bottom: 40%;
+    right: 1.8vw;
+}
+
+.container.middle_screen.middle_screen{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.container.middle.left{
+    position: absolute;
+	bottom: 40%;
+    left: 1.8vw;
+}
+
+.title {
+    width: 100%;
+    padding: 1px 0px;
+    text-align: center;
+    background: #ff8410;
+    height: 6vw;
+}
+.title p {
+    font-family: 'SignPainter', sans-serif;
+    color: black;
+    font-size: 3vw;
+    position: relative;
+    padding: 0.35vw;
+    top: 0.5vw;
+}
+
+.menu {
+    width: 100%;
+    padding: 0.37vw 0px;
+}
+
+.menu p {
+	padding: 0;
+	margin: 0;
+    font-family: Montserrat, Calibri, Arial;
+    font-size: 1vw;
+	color: #fff;
+    text-align: left;
+    padding-left: 0.5vw;
+    font-weight: 600;
+}
+
+.menu.active {
+	width: 100%;
+    background: #ffffff;
+}
+.menu.active p {
+    font-family: Montserrat, Calibri, Arial;
+    color: #000;
+    text-align: left;
+    padding-left: 0.5vw;
+}
+
+.button p{
+    font-family: Montserrat, Calibri, Arial;
+    text-align: center;
+    position: relative;
+    top: 7px;
+    color: white;
+}
+
+.button:hover{
+    background: #000000a6;
+    transition: background-color 200ms linear;
+    cursor: pointer;
+}
+
+.button{
+    font-family: Montserrat, Calibri, Arial;
+    position: relative;
+    left: 29px;
+    bottom: 12px;
+    background: #000000;
+    height: 39px;
+    width: 127px;
+    float: left;
+    margin: 7px;
+    border-radius: 3px;
+    transition: background-color 200ms linear;
+}
+
+#inputdiv {
+    max-width: 266px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -6%);
+}
+
+#scrolldiv{
+    max-height: 14vw;
+    overflow: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+}
+
+textarea:focus, input:focus{
+    outline: none !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#inputak{
+    outline: none;
+    border: none;
+    border-radius: 0px;
+}

@@ -2,20 +2,73 @@
 	<head>
 		<link rel="stylesheet" href="css/reset.css" type="text/css">
 		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<link rel="stylesheet" href="MenuAPI/style.css" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+				integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+				crossorigin="anonymous"></script>
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
 		<meta charset="UTF-8">
-		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="./scripts/vue.min.js" type="text/javascript"></script>
 	</head>
-	<body id = "body" style = "display:none">
-	
-		<div id = "cont">
-			<progress id="loading" max="100" value="80"></progress>
-			<iframe id = "browser" src="" frameborder="0" scrolling="no">
-				
-			</iframe>
-			<a id = "off_pc">Turn OFF the computer</a>
+	<body style = "background: transparent !important;">
+		<div id = "body" style = "display:none">
+			<div id = "cont">
+				<progress id="loading" max="100" value="80"></progress>
+				<iframe id = "browser" src="" frameborder="0" scrolling="no">
+
+				</iframe>
+				<a id = "off_pc">Turn OFF the computer</a>
+			</div>
 		</div>
+
+		<div id="input">
+			<div class="container" v-bind:class="[position, float]" v-if="visible" style="min-width: 339px !important;max-width: 339px !important;">
+
+				<div class="title">
+					<p style="font-size: 40px;">{{titleMenu}}</p>
+				</div>
+				<br>
+				<form>
+					<div class="input-group mb-3" id = "inputdiv">
+						<div class="input-group-prepend" v-if="AppInput.defaultTextInfront !== ''" style="height: 36.1px;position: relative;top: 1px;">
+							<span class="input-group-text" id="basic-addon1" style="border-radius: 0;">{{AppInput.defaultTextInfront}}</span>
+						</div>
+						<input id ="inputak" v-model="message" maxlength="10" type="number" class="form-control shadow-none" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1">
+					</div>
+				</form>
+				<div class = "button" @click="Choose()">
+					<p>{{ChooseText}}</p>
+				</div>
+
+				<div class = "button" @click="Close()">
+					<p>{{CloseText}}</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="menu">
+			<div class="container" v-bind:class="[position, float]" v-if="visible">
+				<div class="title">
+					<p>carnival</p>
+				</div>
+				<div class="menu" style="background: black;">
+					<p style="color: orange;">{{titleMenu}}</p>
+				</div>
+				<div id = "scrolldiv">
+					<div v-for="item, index in menu" class="menu" v-bind:class="{ 'active': item.active}">
+						<p>
+							<span v-html="item.label"></span>
+							<span v-html="item.secondLabel" v-if="item.secondLabel !== ''" style="float: right;margin-right: 0.7vw;"></span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="./MenuAPI/listener.js" type="text/javascript"></script>
 		<script src="./scripts/listener.js" type="text/javascript"></script>
 	</body>
 </html>

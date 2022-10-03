@@ -36,6 +36,17 @@
     width: 100%;
 }
 
+#off_pc{
+    background: black;
+    color: white;
+    font-weight: 600;
+    position: relative;
+    top: 16px;
+}
+
+#off_pc:hover{
+    background: gray;
+}
 
 a{
 	color: #fff;

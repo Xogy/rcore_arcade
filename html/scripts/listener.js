@@ -13,9 +13,9 @@ $(function(){
         var item = event.data;
         if (item.type === "on")
         {
+            display(true);
             $("#loading").show();
             alreadydid = true;
-            display(true);
             gaming = true;
             if(item.gpu === "ETX660")
             {
@@ -33,10 +33,12 @@ $(function(){
                 $("#cont").css('max-width',1600);
             }
 
-            if(item.cpu === "U9_9900")  { loadGame(3*10);  }
+            if(item.cpu === "U9_9900")  { loadGame(3*5);  }
             if(item.cpu === "U7_8700")  { loadGame(10*10); }
             if(item.cpu === "U3_6300")  { loadGame(15*10); }
             if(item.cpu === "BENTIUM")  { loadGame(20*10); }
+
+            loadIframe(false, item.game);
         }
         if (item.type === "off") {
             display(false);
@@ -47,8 +49,6 @@ $(function(){
             time_seconds = 0;
             kokotina = 0;
         }
-
-        loadIframe(false, item.game);
     })
 });  	
 
