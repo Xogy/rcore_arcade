@@ -4,6 +4,8 @@
 SharedObject = GetSharedObject()
 gotTicket = false
 
+freezeMarker = false
+
 minutes = 0
 seconds = 0
 -------------------
@@ -71,6 +73,10 @@ CreateThread(function()
                 CloseAll()
             end)
             computerMarker.on('key', function()
+                if freezeMarker then
+                    return
+                end
+
                 if gotTicket == false then
                     playerBuyTicketMenu()
                 else
@@ -83,12 +89,15 @@ CreateThread(function()
             createBlip(v.blip.name, v.blip.blipId, v.blip.position, v.blip)
         end
     end
+end)
+
+CreateThread(function()
     if Config.Framework.Active ~= Framework.STANDALONE then
         while true do
-            Wait(1000)
+            Wait(500)
             local pPos = GetEntityCoords(PlayerPedId())
             for k, v in pairs(Config.Arcade) do
-                if #(pPos - v.NPC.position) < 5 then
+                if #(pPos - v.NPC.position) < 30 then
                     if not v.NPC.Spawned then
                         local ped = createLocalPed(4, v.NPC.model, v.NPC.position, v.NPC.heading)
 

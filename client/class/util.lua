@@ -22,6 +22,8 @@ function RegisterKey(fc, uniqid, description, key, inputDevice)
 end
 
 function playerBuyTicketMenu()
+    freezeMarker = true
+
     local elements = {}
     local index = 0
     local ticketMenu = CreateMenu("ticket_menu")
@@ -38,36 +40,26 @@ function playerBuyTicketMenu()
         ticketMenu.AddItem(index, { _U("ticket_label", v.label), " <span style='color: green;'>$" .. CommaValue(v.price) .. "</span>" }, function()
             TriggerServerEvent("rcore_arcade:buyTicket", k)
             ticketMenu.Destroy()
+
+            CreateThread(function()
+                Wait(100)
+                freezeMarker = false
+            end)
         end)
     end
 
-    ticketMenu.On("selectitem", function(index)
-
-    end)
-
     ticketMenu.On("close", function()
-
+        CreateThread(function()
+            Wait(100)
+            freezeMarker = false
+        end)
     end)
 
-    Wait(33)
     ticketMenu.Open()
 end
 
---- @param amount integer
---- add comma to separate thousands
---- stolen from: http://lua-users.org/wiki/FormattingNumbers
-function CommaValue(amount)
-    local formatted = amount
-    while true do
-        formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
-        if (k == 0) then
-            break
-        end
-    end
-    return formatted
-end
-
 function returnTicketMenu()
+    freezeMarker = true
     local returnMenu = CreateMenu("returnMenu")
 
     returnMenu.SetMenuTitle(_U("give_back_ticket"))
@@ -82,14 +74,42 @@ function returnTicketMenu()
         seconds = 0
         gotTicket = false
         returnMenu.Close()
+
+        Wait(100)
+        freezeMarker = false
     end)
 
     returnMenu.AddItem(2, _U("no"), function()
         returnMenu.Close()
+
+        CreateThread(function()
+            Wait(100)
+            freezeMarker = false
+        end)
     end)
 
-    Wait(33)
+    returnMenu.On("close", function()
+        CreateThread(function()
+            Wait(100)
+            freezeMarker = false
+        end)
+    end)
+
     returnMenu.Open()
+end
+
+--- @param amount integer
+--- add comma to separate thousands
+--- stolen from: http://lua-users.org/wiki/FormattingNumbers
+function CommaValue(amount)
+    local formatted = amount
+    while true do
+        formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
+        if (k == 0) then
+            break
+        end
+    end
+    return formatted
 end
 
 function showHelpNotification(text)
