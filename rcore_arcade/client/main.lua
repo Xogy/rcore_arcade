@@ -30,6 +30,7 @@ CreateThread(function()
                 })
                 SetNuiFocus(false, false)
                 SetPlayerVisible(true)
+                RevertMinigameCamera()
             end
 
             countTime()
