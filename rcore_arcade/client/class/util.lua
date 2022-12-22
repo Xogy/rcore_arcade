@@ -48,12 +48,15 @@ function playerBuyTicketMenu()
         end)
     end
 
-    ticketMenu.On("close", function()
+    local closed = function()
         CreateThread(function()
             Wait(100)
             freezeMarker = false
         end)
-    end)
+    end
+
+    ticketMenu.On("close", closed)
+    ticketMenu.On("exit",closed)
 
     ticketMenu.Open()
 end
@@ -88,12 +91,15 @@ function returnTicketMenu()
         end)
     end)
 
-    returnMenu.On("close", function()
+    local closed = function()
         CreateThread(function()
             Wait(100)
             freezeMarker = false
         end)
-    end)
+    end
+
+    returnMenu.On("close", closed)
+    returnMenu.On("exit",closed)
 
     returnMenu.Open()
 end
