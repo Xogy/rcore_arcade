@@ -27,6 +27,8 @@ Config.Framework = {
     AutoCheck = true,
 }
 
+Config.Society = "society"
+
 -- Key settings
 Config.keyToOpenTicketMenu = "E"
 Config.keyToOpenComputer = "E"
