@@ -10,13 +10,13 @@ AddEventHandler("rcore_arcade:buyTicket", function(ticket)
             local player = SharedObject.GetPlayerFromId(source)
             local moneyPlayer = player.getMoney()
 
-            TriggerEvent('esx_addonaccount:getSharedAccount', Config.Society, function(account)
-                if account then
-                    account.addMoney(data.price)
-                end
-            end)
-
             if moneyPlayer > data.price then
+                TriggerEvent('esx_addonaccount:getSharedAccount', Config.Society, function(account)
+                    if account then
+                        account.addMoney(data.price)
+                    end
+                end)
+
                 player.removeMoney(data.price)
                 TriggerClientEvent("rcore_arcade:ticketResult", source, ticket)
             else
