@@ -15,7 +15,7 @@ AddEventHandler("rcore_arcade:nomoney", function()
     showNotification(_U("not_enough_money"))
 end)
 
-RegisterNUICallback('exit', function()
+RegisterNUICallback('exit', function(data, cb)
     SendNUIMessage({
         type = "off",
         game = "",
@@ -24,4 +24,6 @@ RegisterNUICallback('exit', function()
     SetNuiFocus(false, false)
     RevertMinigameCamera()
     ClearPedTasks(PlayerPedId())
+
+    if cb then cb('ok') end
 end)
