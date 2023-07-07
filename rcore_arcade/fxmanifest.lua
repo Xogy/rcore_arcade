@@ -10,7 +10,6 @@ client_scripts {
 	"client/InvisibleFunction.lua",
 	"client/class/*.lua",
 	"client/events.lua",
-	"client/threads.lua",
 
 	"MenuAPI/exports/*.lua",
 	"MenuAPI/system/*.lua",
@@ -26,7 +25,6 @@ escrow_ignore {
 	"client/main.lua",
 	"client/class/*.lua",
 	"client/events.lua",
-	"client/threads.lua",
 	"client/InvisibleFunction.lua",
 
 	"MenuAPI/exports/*.lua",
@@ -60,7 +58,6 @@ files {
 	"html/css/reset.css",
 	
 	"html/css/img/monitor.png",
-	"html/css/img/table.png",
 	
 	"html/*.html",
 	
